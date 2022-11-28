@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('all-posts-admin', {
+    res.render('allpost', {
       layout: 'dashboard',
       posts,
     });
@@ -23,7 +23,9 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/new', withAuth, (req, res) => {
-  res.render('new-post', {
+  res.render('newpost', {
     layout: 'dashboard',
   });
 });
+
+module.exports = router;

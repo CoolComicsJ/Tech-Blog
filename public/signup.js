@@ -1,7 +1,7 @@
 const signupFormHandler = async function(event) {
+  event.preventDefault();
 
-
-    event.preventDefault();
+    
   
     const usernameEl = document.querySelector('#username-signup-input');
     const passwordEl = document.querySelector('#password-signup-input');
@@ -13,10 +13,12 @@ const signupFormHandler = async function(event) {
         password: passwordEl.value,
       }),
       headers: { 'Content-Type': 'application/json' },
+      
     });
   
     if (response.ok) {
       document.location.replace('/dashboard');
+      console.log(response)
     } else {
       
     }
